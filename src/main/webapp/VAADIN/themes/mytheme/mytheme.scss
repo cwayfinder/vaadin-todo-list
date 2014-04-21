@@ -1,0 +1,174 @@
+@import "icons/fontello.scss";
+@import "fonts/open-sans.scss";
+@import "keyframes.scss";
+@import "mixins.scss";
+
+/* Import the reindeer theme. */
+/* This only allows us to use the mixins defined in it and does not add any styles by itself. */
+@import "../reindeer/reindeer.scss";
+
+/* This contains all of your theme. */
+/* If somebody wants to extend the theme she will include this mixin. */
+@mixin mytheme {
+  /* Include all the styles from the reindeer theme */
+  @include reindeer;
+
+  /* Insert your theme rules here */
+
+  &.v-app {
+    background: #353637 !important;
+  }
+
+  &.v-app,
+  .v-drag-element,
+  .v-contextmenu,
+  .v-menubar-popup,
+  .v-filterselect-suggestpopup,
+  .v-datefield-popup,
+  .v-popupview-popup,
+  .v-Notification,
+  .v-window,
+  .v-tooltip {
+    font-family: "Open Sans", Arial, sans-serif;
+  }
+
+
+  .v-label.h4 {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #349aff;
+  }
+
+  .login-bg {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: #353637;
+
+    /* TODO mixin */
+    background: -moz-radial-gradient(center, ellipse cover, #4c4d4e 0%, #303131 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #4c4d4e), color-stop(100%, #303131));
+    background: -webkit-radial-gradient(center, ellipse cover, #4c4d4e 0%, #303131 100%);
+    background: -o-radial-gradient(center, ellipse cover, #4c4d4e 0%, #303131 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #4c4d4e 0%, #303131 100%);
+    /* 	background: radial-gradient(ellipse at center, #4c4d4e 0%,#303131 100%); */
+
+    opacity: 0;
+
+    /* TODO mixin */
+    -webkit-transition: opacity 300ms linear;
+    -moz-transition: opacity 300ms linear;
+    transition: opacity 300ms linear;
+
+    @include fade-in;
+  }
+
+  .main-view,
+  .login-layout {
+    position: relative;
+    z-index: 2;
+  }
+
+  .projects-container {
+    overflow-y: scroll !important;
+  }
+
+  .project-panel {
+    background: #fff;
+    @include border-radius(10px);
+//    @include box-shadow(0 4px 20px rgba(0, 0, 0, .5));
+//    padding-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  .project-bar {
+    background-color: #157FCC;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .project-bar input[type=text][readonly] {
+    font-size: 20px;
+    color: white;
+  }
+
+  .add-task-bar {
+    background-color: #d3d3d3;
+    padding: 10px;
+  }
+
+  .task-row {
+    padding: 10px;
+    background-color: lightgoldenrodyellow;
+    border-top: thin solid #d3d3d3;
+  }
+
+  .task-row .v-textfield-readonly {
+    font-size: 18px;
+  }
+
+  .task-row .v-textfield-readonly.completed {
+    color: darkgray;
+    text-decoration: line-through;
+  }
+
+  .task-row .v-button, .task-row .v-datefield:not(.not-empty) {
+    visibility: hidden;
+  }
+
+  .task-row:hover .v-button, .task-row:hover .v-datefield {
+    visibility: visible;
+  }
+
+  .task-row .v-checkbox {
+    margin: 4px 1px 2px;
+  }
+
+
+
+
+
+
+  div.login-panel {
+    @include move-up-100;
+  }
+
+  .login-panel {
+    background: #fff;
+    @include border-radius(4px);
+    @include box-shadow(0 4px 20px rgba(0, 0, 0, .5));
+    padding: 10px;
+  }
+
+  .login-panel .labels,
+  .login-panel .fields {
+    display: block;
+  }
+
+  .login-panel .v-textfield {
+    width: 150px;
+  }
+
+  .login-panel .h2 {
+    padding: 4px;
+    font-size: 20px;
+    color: #c4cacf;
+    letter-spacing: -0.05em;
+  }
+
+  .login-panel .error {
+    font-size: 13px;
+    height: 20px;
+    padding-left: 14px;
+  }
+
+
+
+
+}
