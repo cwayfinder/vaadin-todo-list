@@ -1,0 +1,7 @@
+<HorizontalLayout width="100%" spacing="true" xmlns:l="urn:vaadin:parent">
+  <CheckBox id="doneField" />
+  <TextField id="nameField" width="100%" l:expandRatio="1.0" />
+  <Button id="edit" caption="Edit" />
+  <Button id="delete" caption="Delete" />
+  <DateField id="deadlineField" />
+</HorizontalLayout>
